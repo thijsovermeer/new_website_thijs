@@ -1,0 +1,356 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap');
+
+:root {
+  --background-color: #FAFAFA;
+  --background-end-rgb: 0, 0, 0;
+  --background-start-rgb: 0, 0, 0;
+  --foreground-rgb: 255, 255, 255;
+  --link-color: #007BFF;
+  --primary-color: #007BFF;
+  --secondary-color: #FF6347;
+  --text-color: #333;
+  font-size: 100%;
+}
+
+body, h1, h2, h3, h4, h5, h6, p {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+  box-sizing: border-box;
+  color: #000;
+  font-family: 'Open Sans', sans-serif;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+}
+
+p {
+  font-size: 1rem;
+}
+
+.highlight {
+  color: var(--primary-color);
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0 10px;
+}
+
+.section-title {
+  display: inline-block;
+  padding-bottom: 1rem;
+  position: relative;
+}
+
+.section-title:after {
+  background-color: var(--primary-color);
+  bottom: 0;
+  content: "";
+  height: .25rem;
+  position: absolute;
+  width: 60%;
+  left: 50%; /* Move the left edge to the center */
+  transform: translateX(-50%); /* Shift it back by half its width */
+}
+
+.card {
+  align-items: center;
+  background-color: #f8f8f8;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 1.5rem;
+  transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+  width: 100%;
+}
+
+.card:hover {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  transform: scale(1.02);
+}
+
+.card-content {
+  align-items: center;
+  display: flex;
+  justify-content: flex-start;
+  max-height: 80vh;
+  padding: 1rem;
+  width: 70%;
+}
+
+#home .card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-height: 10vh;
+  padding: 2rem;
+}
+
+
+.card-image {
+  border-radius: 3em;
+  flex-basis: 0;
+  flex-grow: 1;
+  flex-shrink: 0;
+  height: 100%;
+  margin-right: 1rem;
+  max-width: 30%;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+  width: 100%;
+}
+
+.card-image img:hover {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  transform: scale(1.05);
+}
+
+.card-image-home {
+  /* align center */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top:-3rem;
+  border-radius: 3rem;
+  flex-basis: 0;
+  flex-grow: 1;
+  flex-shrink: 0;
+  height: 60%;
+  max-width: 70%;
+  transition: all 0.3s ease-in-out;
+
+}
+
+.card-image-home img:hover {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  transform: scale(1.05);
+}
+
+.card-text {
+  align-items: center;
+  color: var(--text-color);
+  flex: 1;
+  height: 35rem;
+  line-height: 2rem;
+  font-size: 1rem;
+  margin-top: 1.3rem;
+  overflow: auto;
+  text-align: left;
+  transition: color 0.3s ease;
+}
+
+.card-text-home {
+  align-items: center;
+  color: var(--text-color);
+  flex: 1;
+  font-size: 1rem;
+  text-align: center;
+  width: 100%;
+}
+
+.card-text h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+
+.card-text p {
+  color: var(--text-color);
+  font-size: 1rem;
+  line-height: 1.6;
+  white-space: pre-line;
+}
+
+.card-text::-webkit-scrollbar {
+  width: .5rem;
+}
+
+.card-text::-webkit-scrollbar-thumb {
+  background-color: var(--primary-color);
+  border-radius: 1rem;
+}
+
+.card-text:hover {
+  color: var(--primary-color);
+}
+
+header {
+  align-items: center;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.9), rgba(225, 225, 225, 0.9));
+  box-shadow: 0 .4rem .8rem rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  padding: .01rem 1rem;
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+#about, #research, #experience #contact {
+  padding-top: 1rem;
+}
+
+.logo {
+  color: var(--primary-color);
+  font-size: 2rem;
+}
+
+header button, button.nav-button {
+  background-color: transparent;
+  border: none;
+  border-radius: 3rem;
+  cursor: pointer;
+  font-size: 1rem;
+  margin: 1rem;
+  padding: 1rem 2rem;
+  transition: all 0.3s ease-in-out;
+}
+
+header button {
+  color: var(--primary-color);
+  font-size: 1.5rem;
+  margin-left: 1rem;
+}
+
+header button:hover{
+  color: var(--secondary-color);
+  transform: scale(1.2);
+}
+
+header button:active, button.nav-button:active {
+  transform: scale(2.0);
+}
+
+button.nav-button:hover {
+  transform:scale(1.2);
+}
+button.nav-button {
+  background-color: var(--primary-color);
+  color: #fff;
+  outline: none;
+}
+
+button.nav-button[disabled] {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+
+.social-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.social-link-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (max-width: 2500px){
+  .card-content {
+    width: 95%;
+  }
+}
+@media (max-width: 768px) {
+  :root {
+    font-size: 90%; 
+  }
+  .card-content {
+    width: 85%;
+  }
+
+  .logo {
+    display: none;
+  }
+}
+
+
+@media (max-width: 480px) {
+  :root {
+    font-size: 85%; 
+  }
+
+  .logo {
+    display: none;
+  }
+
+  .card {
+    padding: 1.2rem;
+    margin: 0.1rem;
+    flex-direction: column;
+  }
+
+  .section-title {
+    text-align: center;
+    white-space: pre-line;
+  }
+
+  header button {
+    padding: 1rem;
+    font-size: 1.75rem;
+  }
+
+  .card-image {
+    display: none;
+  }
+
+  .card-image-home {
+    display: none;
+  }
+  .card-content{
+    width: 95%;
+  }
+
+  /* .card-text {
+    width: 100%;
+    padding: 0rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }*/
+ .card-text h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.0rem;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    text-align: center;
+  }
+
+  .card-text p {
+    color: var(--text-color);
+    font-size: 0.875rem;
+    line-height: 1.6;
+    text-align: center;
+  } 
+  
+  
+}
+
