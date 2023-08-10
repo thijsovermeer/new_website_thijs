@@ -56,6 +56,16 @@ export default function Layout() {
         <div>
             <Head>
             <title>Thijs Overmeer - Scientific Programmer | AI Expert at EAISI | University of Technology in Eindhoven Graduate</title>
+                {/* Google Analytics */}
+                <script async src="https://www.googletagmanager.com/gtag/js?id=G-T8RTM21YR1"></script>
+                <script>
+                    {`
+                      window.dataLayer = window.dataLayer || [];
+                      function gtag(){dataLayer.push(arguments);}
+                      gtag('js', new Date());
+                      gtag('config', 'G-T8RTM21YR1');
+                    `}
+                </script>
             </Head>
             <header>
                 <div className="logo">Thijs Overmeer</div>
