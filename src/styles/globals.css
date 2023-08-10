@@ -350,7 +350,15 @@ button.nav-button[disabled] {
     line-height: 1.6;
     text-align: center;
   } 
-  
-  
+  @media (max-width: 375px) {
+    :root {
+      font-size: 75%; 
+    }
+  }
+  @media (max-width: 320px) {
+    :root {
+      font-size: 65%; 
+    }
+  }
 }
 
